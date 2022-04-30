@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "juan@gmail.com",
+      "address": "Casa de Juan",
+      "firstname": "Juan",
+      "lastname": "Carlos",
+      "phone": 111111111,
+      "postal_code": 111
+    },
+    {
+      "id": 2,
+      "email": "cesar@gmail.com",
+      "address": "Casa de Cesar",
+      "firstname": "Cesar",
+      "lastname": "Anibal",
+      "phone": 222222222,
+      "postal_code": 222
+    },
+    {
+      "id": 3,
+      "email": "beto@gmail.com",
+      "address": "Casa de Beto",
+      "firstname": "Beto",
+      "lastname": "Salas",
+      "phone": 333333333,
+      "postal_code": 333
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "GeForce RTX 3090",
+      "price": 1200,
+      "description": "New Graphics Card",
+      "url_image": "https://www.profesionalreview.com/wp-content/uploads/2020/10/Nvidia-RTX-3090-Review10.jpg"
+    },
+    {
+      "id": 2,
+      "name": "GeForce RTX 3080",
+      "price": 1100,
+      "description": "New Graphics Card",
+      "url_image": "https://www.notebookcheck.org/fileadmin/Notebooks/NVIDIA/geforce_rtx_3080_fe.png"
+    },
+    {
+      "id": 3,
+      "name": "GeForce RTX 3070",
+      "price": 1000,
+      "description": "New Graphics Card",
+      "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3070/geforce-rtx-3070-shop-630-d@2x.png"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "order_amount": "3000",
+      "purchase_date": "15 de julio",
+      "delivery_date": "15 de agosto",
+      "delivery_address": "Casa 1"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "order_amount": "5000",
+      "purchase_date": "15 de julio",
+      "delivery_date": "15 de agosto",
+      "delivery_address": "Casa 2"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "order_amount": "6000",
+      "purchase_date": "15 de julio",
+      "delivery_date": "15 de agosto",
+      "delivery_address": "Casa 3"
+    }
+  ]
+}
