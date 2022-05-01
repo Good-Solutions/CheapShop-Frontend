@@ -1,23 +1,18 @@
 <template>
   <v-container>
     <v-data-iterator
-        :items="displayProducts">
-
+        :items="displayProducts"
+        :footer-props="{'items-per-page-options':opts}"
+    >
       <template v-slot:default="props">
         <v-row>
           <v-col
               v-for="item in props.items"
               :key="item.name"
-              cols="12"
-              sm="6"
-              md="4"
-              lg="3"
+              cols="auto"
           >
             <v-card>
-              <v-img
-                  height="250"
-                  src='Url aqui'
-              ></v-img>
+              <img v-bind:src="item.url_image" width="250" height="150"/>
               <v-card-title> {{ item.name }} </v-card-title>
               <v-divider></v-divider>
               <v-card-title class="grey--text ms-4"> $ {{item.price}}</v-card-title>
@@ -33,9 +28,10 @@
 <script>
 import ProductApiService from '../services/products-api.service';
 export default {
-  name: "home",
+  name: "products",
   data() {
-    return {
+    return{
+      opts:[15,30,-1],
       products: [],
       displayProducts: []
     }

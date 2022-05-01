@@ -4,58 +4,70 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/home',
-        name: 'home',
-        component: () => import('../views/home')
+        path: '/profile',
+        name: 'profile',
+        component: () => import('../views/profile')
     },
-
+    //Products
     {
         path: '/products',
         name: 'products',
-        component: () => import('../components/products/products')
+        component: () => import('../views/products')
+    },
+    // Admin product
+    {
+        path: '/admin-products',
+        name: 'admin-products',
+        component: () => import('../components/products/admin-products')
     },
     {
-        path: '/products/new',
+        path: '/admin-products/new',
         name: 'add-product',
         component: () => import('../components/products/add-product')
     },
     {
-        path: '/product/:id',
+        path: '/admin-product/:id',
         name: 'edit-product',
         component: () => import('../components/products/edit-product')
     },
-
+    // admin orders
     {
-        path: '/orders',
+        path: '/admin-orders',
         name: 'orders',
-        component: () => import('../components/orders/orders')
+        component: () => import('../components/orders/admin-orders')
     },
     {
-        path: '/orders/new',
+        path: '/admin-orders/new',
         name: 'add-order',
         component: () => import('../components/orders/add-order')
     },
     {
-        path: '/order/:id',
+        path: '/admin-order/:id',
         name: 'edit-order',
         component: () => import('../components/orders/edit-order')
     },
-
+    // categories
     {
         path: '/categories',
         name: 'categories',
-        component: () => import('../components/categories/categories')
+        component: () => import('../views/categories')
+    },
+    // admin categories
+    {
+        path: '/admin-categories',
+        name: 'admin-categories',
+        component: () => import('../components/categories/admin-categories')
     },
     {
-        path: '/category/new',
+        path: '/admin-category/new',
         name: 'add-category',
         component: () => import('../components/categories/add-category')
     },
     {
-        path: '/category/:id',
+        path: '/admin-category/:id',
         name: 'edit-category',
         component: () => import('../components/categories/edit-category')
-    },
+    }
 ]
 
 const router = new VueRouter({

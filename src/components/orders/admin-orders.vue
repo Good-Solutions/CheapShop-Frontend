@@ -44,7 +44,7 @@
 <script>
 import OrderApiService from '../../services/orders-api.service';
 export default {
-  name: "orders",
+  name: "admin-orders",
   data() {
     return {
       search: '',

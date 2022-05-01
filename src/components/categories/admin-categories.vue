@@ -1,24 +1,24 @@
 <template>
   <v-card>
-    <v-card-title>Products<v-spacer></v-spacer>
-        <v-text-field
+    <v-card-title>Categories<v-spacer></v-spacer>
+      <v-text-field
           v-model="search"
           append-icon="mdi-magnify"
           label="Search"
           single-line
           hide-details
-        ></v-text-field>
+      ></v-text-field>
     </v-card-title>
     <!-- Tabla-->
     <v-card-text>
       <v-data-table :headers="headers"
-                    :items="displayProducts"
+                    :items="displayCategories"
                     :items-per-page="10"
                     :search="search"
-                    class="elevation-1" ref="productsTable">
+                    class="elevation-1" ref="categoriesTable">
         <template v-slot:item.actions="{ item }">
-          <v-icon small @click="navigateToEditProduct(item.id)">mdi-pen</v-icon>
-          <v-icon small @click="deleteProduct(item.id)">mdi-delete</v-icon>
+          <v-icon small @click="navigateToEditCategory(item.id)">mdi-pen</v-icon>
+          <v-icon small @click="deleteCategory(item.id)">mdi-delete</v-icon>
         </template>
       </v-data-table>
     </v-card-text>
@@ -31,7 +31,7 @@
           dark
           color="indigo"
           x-small
-          @click="navigateToAddProduct"
+          @click="navigateToAddCategory"
       >
         <v-icon dark>
           mdi-plus
@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import ProductApiService from '../../services/products-api.service';
+import CategoryApiService from '../../services/categories-api.service';
 export default {
-  name: "products",
+  name: "admin-categories",
   data() {
     return {
       search: '',
@@ -53,62 +53,54 @@ export default {
       headers: [
         {text: 'Id', value: 'id'},
         {text: 'Name', value: 'name'},
-        {text: 'Price', value: 'price'},
-        {text: 'Description', value: 'description'},
         {text: 'URL Image', value: 'url_image'},
         {text: 'Actions', value: 'actions', sortable:false}
       ],
-      products: [],
-      displayProducts: [],
+      categories: [],
+      displayCategories: [],
       editedIndex: -1,
       editedItem: {
         id: 0,
         name: '',
-        price: 0,
-        description: '',
         url_image:''
       },
       defaultItem: {
         id: 0,
         name: '',
-        price: 0,
-        description: '',
         url_image:''
       },
     }
   },
 
   methods: {
-    retrieveProducts() {
-      ProductApiService.getAll()
+    retrieveCategories() {
+      CategoryApiService.getAll()
           .then(response => {
-            this.products = response.data;
-            this.displayProducts = response.data.map(this.getDisplayProduct);
+            this.categories = response.data;
+            this.displayCategories = response.data.map(this.getDisplayCategory);
           })
           .catch((e) => {
             console.log(e);
           });
     },
 
-    getDisplayProduct(product) {
+    getDisplayCategory(category) {
       return {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        description: product.description,
-        url_image:product.url_image
+        id: category.id,
+        name: category.name,
+        url_image:category.url_image
       };
     },
 
     refreshList() {
-      this.retrieveProducts();
+      this.retrieveCategories();
     },
 
     save() {
       if (this.editedIndex > -1) {
-        this.products[this.editedIndex] = this.editedItem;
-        this.displayProducts[this.editedIndex] = this.getDisplayProduct(this.products[this.editedIndex]);
-        ProductApiService.update(this.editedItem.id, this.editedItem)
+        this.categories[this.editedIndex] = this.editedItem;
+        this.displayCategories[this.editedIndex] = this.getDisplayCategory(this.categories[this.editedIndex]);
+        CategoryApiService.update(this.editedItem.id, this.editedItem)
             .then(() => {
               this.refreshList();
             })
@@ -117,11 +109,11 @@ export default {
             });
 
       } else {
-        ProductApiService.create(this.editedItem)
+        CategoryApiService.create(this.editedItem)
             .then(response => {
               let item = response.data;
-              this.products.push(item);
-              this.displayProducts.push(this.getDisplayProduct(item));
+              this.categories.push(item);
+              this.displayCategories.push(this.getDisplayCategory(item));
             })
             .catch(e => {
               console.log(e);
@@ -130,8 +122,8 @@ export default {
       this.close()
     },
 
-    deleteProduct(id) {
-      ProductApiService.delete(id)
+    deleteCategory(id) {
+      CategoryApiService.delete(id)
           .then(() => {
             this.refreshList();
           })
@@ -140,17 +132,17 @@ export default {
           });
     },
 
-    navigateToAddProduct() {
-      this.$router.push({name: 'add-product'});
+    navigateToAddCategory() {
+      this.$router.push({name: 'add-category'});
     },
 
-    navigateToEditProduct(id) {
-      this.$router.push({name: 'edit-product', params: { id: id}});
+    navigateToEditCategory(id) {
+      this.$router.push({name: 'edit-category', params: { id: id}});
     }
 
   },
   mounted() {
-    this.retrieveProducts();
+    this.retrieveCategories();
   }
 }
 
