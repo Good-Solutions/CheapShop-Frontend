@@ -15,6 +15,7 @@
         <v-btn text to="/profile">Profile</v-btn>
       </v-toolbar-items>
     </v-app-bar>
+
     <v-main>
       <v-container>
         <router-view></router-view>
@@ -30,11 +31,7 @@
 export default {
   name: 'App',
 
-  components: {
-  },
-
   data: () => ({
-    //
   }),
 };
 </script>

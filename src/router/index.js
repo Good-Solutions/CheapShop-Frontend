@@ -8,11 +8,18 @@ const routes = [
         name: 'profile',
         component: () => import('../views/profile')
     },
+
     //Products
     {
         path: '/products',
         name: 'products',
         component: () => import('../views/products')
+    },
+    //View Detail
+    {
+        path: '/products/:id',
+        name: 'product-detail',
+        component: () => import('../views/product-detail')
     },
     // Admin product
     {
@@ -30,6 +37,7 @@ const routes = [
         name: 'edit-product',
         component: () => import('../components/products/edit-product')
     },
+
     // admin orders
     {
         path: '/admin-orders',
@@ -46,6 +54,7 @@ const routes = [
         name: 'edit-order',
         component: () => import('../components/orders/edit-order')
     },
+
     // categories
     {
         path: '/categories',

@@ -20,7 +20,7 @@
                 <v-container>
                   <v-card-title>{{item.firstname }} {{item.lastname}}</v-card-title>
                   <v-card-text>Dirección: {{item.address}}</v-card-text>
-                  <v-card-text>Cédigo Postal: {{item.postal_code}}</v-card-text>
+                  <v-card-text>Código Postal: {{item.postal_code}}</v-card-text>
                   <v-card-text>Télefono: {{item.phone}}</v-card-text>
                 </v-container>
               </v-col>
