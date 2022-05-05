@@ -15,6 +15,9 @@
           <v-col cols="12" sm="6" md="4">
             <v-text-field v-model="item.description" label="Category Description"></v-text-field>
           </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.url_image" label="URL Image"></v-text-field>
+          </v-col>
         </v-row>
       </v-container>
     </v-card-text>
@@ -37,6 +40,7 @@ export default {
         id: 0,
         name: '',
         description: '',
+        url_image:'',
       }
     }
   },

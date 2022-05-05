@@ -76,7 +76,23 @@ const routes = [
         path: '/admin-category/:id',
         name: 'edit-category',
         component: () => import('../components/categories/edit-category')
-    }
+    },
+    // admin users
+    {
+        path: '/admin-users',
+        name: 'admin-users',
+        component: () => import('../components/users/admin-users')
+    },
+    {
+        path: '/admin-users/new',
+        name: 'add-user',
+        component: () => import('../components/users/add-user')
+    },
+    {
+        path: '/admin-users/:id',
+        name: 'edit-user',
+        component: () => import('../components/users/edit-user')
+    },
 ]
 
 const router = new VueRouter({

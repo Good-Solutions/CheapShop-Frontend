@@ -7,7 +7,7 @@
       <v-container>
         <v-row>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.name" label="Product Title"></v-text-field>
+            <v-text-field v-model="item.name" label="Product Name"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
             <v-text-field v-model="item.price" label="Price" type="number"></v-text-field>
@@ -17,6 +17,18 @@
           </v-col>
           <v-col cols="12" sm="6" md="4">
             <v-text-field v-model="item.url_image" label="Url Image"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.minimum_to_sold" label="Minimum to Sold"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.vote_counter" label="Vote Counter"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.category_id" label="Category Id"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.supplier_id" label="Supplier Id"></v-text-field>
           </v-col>
         </v-row>
       </v-container>
@@ -41,7 +53,11 @@ export default {
         name: '',
         price: 0,
         description: '',
-        url_image: ''
+        url_image:'',
+        minimum_to_sold:0,
+        vote_counter:0,
+        category_id:0,
+        supplier_id:0,
       }
     }
   },

@@ -1,28 +1,28 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">Add Order</span>
+      <span class="headline">Add User</span>
     </v-card-title>
     <v-card-text>
       <v-container>
         <v-row>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.delivery_date" label="Delivery Date"></v-text-field>
+            <v-text-field v-model="item.firstname" label="First Name"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.lastname" label="Last Name"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.phone_number" label="Phone Number"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
             <v-text-field v-model="item.delivery_address" label="Delivery Address"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.purchase_date" label="Purchase Date"></v-text-field>
+            <v-text-field v-model="item.postal_code" label="Postal Code"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.quantity" label="Quantity"></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.user_id" label="User Id"></v-text-field>
-          </v-col>
-          <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.product_id" label="Product Id"></v-text-field>
+            <v-text-field v-model="item.money" label="Money"></v-text-field>
           </v-col>
         </v-row>
       </v-container>
@@ -36,38 +36,40 @@
 </template>
 
 <script>
-import OrdersApiService from "@/services/orders-api.service";
+import UsersApiService from "@/services/users-api.service";
 
 export default {
-  name: "add-order",
+  name: "add-user",
   data() {
     return {
       item: {
         id: 0,
-        delivery_date: '',
-        delivery_address: '',
-        purchase_date: '',
-        quantity:'',
-        user_id:0,
-        product_id:0,
+        delivery_address: "",
+        date_of_birth:"01/01/2000",
+        firstname:"",
+        lastname:"",
+        money:"",
+        phone_number:"",
+        postal_code:"",
       }
     }
   },
   methods: {
+
     save() {
-      OrdersApiService.create(this.item)
+      UsersApiService.create(this.item)
           .then(() => {
-            this.navigateToOrders();
+            this.navigateToUsers();
           })
           .catch(e => {
             console.log(e);
           })
     },
     close() {
-      this.navigateToOrders();
+      this.navigateToUsers();
     },
-    navigateToOrders() {
-      this.$router.push({name: 'orders'});
+    navigateToUsers() {
+      this.$router.push({name: 'users'});
     }
   }
 }

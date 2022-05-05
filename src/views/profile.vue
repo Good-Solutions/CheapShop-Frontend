@@ -1,36 +1,30 @@
 <template>
-  <v-container>
-    <v-data-iterator
-        :items="displayProfile"
-        class="d-flex justify-center ma-4"
-        :hide-default-footer="true"
-    >
-      <template v-slot:default="props">
-        <v-row>
-          <v-col
-              v-for="item in props.items"
-              :key="item.name"
-              cols="auto"
-          >
-            <v-card
-                width="250"
-                align="left"
-            >
-              <v-col>
-                <v-container>
-                  <v-card-title>{{item.firstname }} {{item.lastname}}</v-card-title>
-                  <v-card-text>Dirección: {{item.address}}</v-card-text>
-                  <v-card-text>Código Postal: {{item.postal_code}}</v-card-text>
-                  <v-card-text>Télefono: {{item.phone}}</v-card-text>
-                </v-container>
-              </v-col>
-            </v-card>
-          </v-col>
-        </v-row>
-      </template>
-
-    </v-data-iterator>
-  </v-container>
+  <v-layout align-center justify-center column fill-height>
+    <v-flex row align-center class="pa-10">
+      <v-card max-width="500" max-height="300">
+        <v-container>
+          <v-row align="center">
+            <v-col md="6">
+              <v-img
+                  src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg"
+                  width="250"
+                  height="150"
+              ></v-img>
+            </v-col>
+            <v-col md="6" align="center">
+              <v-row>
+                <v-card-text> Nombre Apellido</v-card-text>
+                <v-card-text> Dirección: </v-card-text>
+                <v-card-text> Email: </v-card-text>
+                <v-card-text> Número: </v-card-text>
+                <v-card-text> Dinero: </v-card-text>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>

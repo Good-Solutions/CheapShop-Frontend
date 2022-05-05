@@ -10,19 +10,22 @@
             <v-text-field v-model="item.id" label="Order Id" type="number"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.user_Id" label="User Id" type="number"></v-text-field>
+            <v-text-field v-model="item.delivery_date" label="Delivery Date"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.order_amount" label="Order Amount" type="number"></v-text-field>
+            <v-text-field v-model="item.delivery_address" label="Delivery Address"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
             <v-text-field v-model="item.purchase_date" label="Purchase Date"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.delivery_date" label="Delivery Date"></v-text-field>
+            <v-text-field v-model="item.quantity" label="Quantity"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.delivery_address" label="Delivery Address"></v-text-field>
+            <v-text-field v-model="item.user_id" label="User Id"></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" md="4">
+            <v-text-field v-model="item.product_id" label="Product Id"></v-text-field>
           </v-col>
         </v-row>
       </v-container>

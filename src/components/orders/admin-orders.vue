@@ -52,11 +52,12 @@ export default {
       dialogDelete: false,
       headers: [
         {text: 'Id', value: 'id'},
-        {text: 'User Id', value: 'user_id'},
-        {text: 'Amount', value: 'order_amount'},
-        {text: 'Purchase Date', value: 'purchase_date'},
         {text: 'Delivery Date', value: 'delivery_date'},
         {text: 'Delivery Address', value: 'delivery_address'},
+        {text: 'Purchase Date', value: 'purchase_date'},
+        {text: 'Quantity', value: 'quantity'},
+        {text: 'User Id', value: 'user_id'},
+        {text: 'Product Id', value: 'product_id'},
         {text: 'Actions', value: 'actions', sortable:false},
       ],
       orders: [],
@@ -64,19 +65,21 @@ export default {
       editedIndex: -1,
       editedItem: {
         id: 0,
-        user_id: 0,
-        order_amount: '',
-        purchase_date: '',
         delivery_date: '',
-        delivery_address: ''
+        delivery_address: '',
+        purchase_date: '',
+        quantity:'',
+        user_id:0,
+        product_id:0,
       },
       defaultItem: {
         id: 0,
-        user_id: 0,
-        order_amount: '',
-        purchase_date: '',
         delivery_date: '',
-        delivery_address: ''
+        delivery_address: '',
+        purchase_date: '',
+        quantity:'',
+        user_id:0,
+        product_id:0,
       },
     }
   },
@@ -85,8 +88,8 @@ export default {
     retrieveOrders() {
       OrderApiService.getAll()
           .then(response => {
-            this.orders = response.data;
-            this.displayOrders = response.data.map(this.getDisplayOrder);
+            this.orders = response.data.content;
+            this.displayOrders = response.data.content.map(this.getDisplayOrder);
           })
           .catch((e) => {
             console.log(e);
@@ -96,11 +99,12 @@ export default {
     getDisplayOrder(order) {
       return {
         id: order.id,
+        delivery_date: order.delivery_date,
+        delivery_address: order.delivery_address,
+        purchase_date: order.purchase_date,
+        quantity:order.quantity,
         user_id:order.user_id,
-        order_amount:order.order_amount,
-        purchase_date:order.purchase_date,
-        delivery_date:order.delivery_date,
-        delivery_address:order.delivery_address
+        product_id:order.product_id,
       };
     },
 

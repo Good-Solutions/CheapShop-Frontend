@@ -1,13 +1,13 @@
 <template>
   <v-card>
     <v-card-title>Products<v-spacer></v-spacer>
-        <v-text-field
+      <v-text-field
           v-model="search"
           append-icon="mdi-magnify"
           label="Search"
           single-line
           hide-details
-        ></v-text-field>
+      ></v-text-field>
     </v-card-title>
     <!-- Tabla-->
     <v-card-text>
@@ -56,6 +56,10 @@ export default {
         {text: 'Price', value: 'price'},
         {text: 'Description', value: 'description'},
         {text: 'URL Image', value: 'url_image'},
+        {text: 'Minimum to Sold', value: 'minimum_to_sold'},
+        {text: 'Vote Counter', value: 'vote_counter'},
+        {text: 'Category Id', value: 'category_id'},
+        {text: 'Supplier Id', value: 'supplier_id'},
         {text: 'Actions', value: 'actions', sortable:false}
       ],
       products: [],
@@ -66,14 +70,22 @@ export default {
         name: '',
         price: 0,
         description: '',
-        url_image:''
+        url_image:'',
+        minimum_to_sold:0,
+        vote_counter:0,
+        category_id:0,
+        supplier_id:0,
       },
       defaultItem: {
         id: 0,
         name: '',
         price: 0,
         description: '',
-        url_image:''
+        url_image:'',
+        minimum_to_sold:0,
+        vote_counter:0,
+        category_id:0,
+        supplier_id:0,
       },
     }
   },
@@ -82,8 +94,8 @@ export default {
     retrieveProducts() {
       ProductApiService.getAll()
           .then(response => {
-            this.products = response.data;
-            this.displayProducts = response.data.map(this.getDisplayProduct);
+            this.products = response.data.content;
+            this.displayProducts = response.data.content.map(this.getDisplayProduct);
           })
           .catch((e) => {
             console.log(e);
@@ -96,7 +108,11 @@ export default {
         name: product.name,
         price: product.price,
         description: product.description,
-        url_image:product.url_image
+        url_image:product.url_image,
+        minimum_to_sold:product.minimum_to_sold,
+        vote_counter:product.vote_counter,
+        category_id:product.category_id,
+        supplier_id:product.supplier_id
       };
     },
 

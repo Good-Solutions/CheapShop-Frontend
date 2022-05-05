@@ -53,6 +53,7 @@ export default {
       headers: [
         {text: 'Id', value: 'id'},
         {text: 'Name', value: 'name'},
+        {text: 'Description', value: 'description'},
         {text: 'URL Image', value: 'url_image'},
         {text: 'Actions', value: 'actions', sortable:false}
       ],
@@ -62,11 +63,13 @@ export default {
       editedItem: {
         id: 0,
         name: '',
+        description: '',
         url_image:''
       },
       defaultItem: {
         id: 0,
         name: '',
+        description: '',
         url_image:''
       },
     }
@@ -76,8 +79,8 @@ export default {
     retrieveCategories() {
       CategoryApiService.getAll()
           .then(response => {
-            this.categories = response.data;
-            this.displayCategories = response.data.map(this.getDisplayCategory);
+            this.categories = response.data.content;
+            this.displayCategories = response.data.content.map(this.getDisplayCategory);
           })
           .catch((e) => {
             console.log(e);
@@ -88,6 +91,7 @@ export default {
       return {
         id: category.id,
         name: category.name,
+        description: category.description,
         url_image:category.url_image
       };
     },
