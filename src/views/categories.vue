@@ -39,8 +39,8 @@ export default {
     retrieveCategories() {
       CategoryApiService.getAll()
           .then(response => {
-            this.categories = response.data;
-            this.displayCategories = response.data.map(this.getDisplayCategory);
+            this.categories = response.data.content;
+            this.displayCategories = response.data.content.map(this.getDisplayCategory);
           })
           .catch((e) => {
             console.log(e);

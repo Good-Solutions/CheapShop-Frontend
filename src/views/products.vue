@@ -16,6 +16,7 @@
               <v-card-title> {{ item.name }} </v-card-title>
               <v-divider></v-divider>
               <v-card-title class="grey--text ms-4"> $ {{item.price}}</v-card-title>
+              <v-btn @click="navigateProductDetail(item.id)"></v-btn>
             </v-card>
           </v-col>
         </v-row>
@@ -41,8 +42,8 @@ export default {
     retrieveProducts() {
       ProductApiService.getAll()
           .then(response => {
-            this.products = response.data;
-            this.displayProducts = response.data.map(this.getDisplayProduct);
+            this.products = response.data.content;
+            this.displayProducts = response.data.content.map(this.getDisplayProduct);
           })
           .catch((e) => {
             console.log(e);
@@ -62,6 +63,10 @@ export default {
     refreshList() {
       this.retrieveProducts();
     },
+
+    navigateProductDetail(id) {
+      this.$router.push({name: 'product-detail', params: { id: id}});
+    }
 
   },
   mounted() {
