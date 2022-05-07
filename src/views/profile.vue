@@ -13,11 +13,10 @@
             </v-col>
             <v-col md="6" align="center">
               <v-row>
-                <v-card-text> Nombre Apellido</v-card-text>
-                <v-card-text> Dirección: </v-card-text>
-                <v-card-text> Email: </v-card-text>
-                <v-card-text> Número: </v-card-text>
-                <v-card-text> Dinero: </v-card-text>
+                <v-card-text> {{ user.firstname }} {{user.lastname}}</v-card-text>
+                <v-card-text> Dirección: {{user.delivery_address}}</v-card-text>
+                <v-card-text> Número: {{user.phone_number}}</v-card-text>
+                <v-card-text> Dinero: {{user.money}}</v-card-text>
               </v-row>
             </v-col>
           </v-row>
@@ -29,43 +28,34 @@
 
 <script>
 import UserApiService from '../services/users-api.service';
+
 export default {
   name: "profile",
   data() {
     return{
-      profile: [],
-      displayProfile: []
+      user: {
+        id: 0,
+        delivery_address: 'delivery_address',
+        date_of_birth:'birth_date',
+        firstname:'firstname',
+        lastname:'lastname',
+        money:'money',
+        phone_number:'phone',
+        postal_code:'postal',
+      }
     }
   },
 
   methods: {
-    retrieveProfile() {
-      UserApiService.getAll()
-          .then(response => {
-            this.profile = response.data;
-            this.displayProfile = response.data.map(this.getDisplayProfile);
+    retrieveProfile(id) {
+      UserApiService.get(id)
+          .then((response) => {
+            this.product_item = response.data.content;
           })
-          .catch((e) => {
-            console.log(e);
-          });
+          .catch(e => {
+            console.log((e));
+          })
     },
-
-    getDisplayProfile(profile) {
-      return {
-        id: profile.id,
-        firstname: profile.firstname,
-        lastname: profile.lastname,
-        address: profile.address,
-        email: profile.email,
-        phone:profile.phone,
-        postal_code:profile.postal_code
-      };
-    },
-
-    refreshList() {
-      this.retrieveProfile();
-    },
-
   },
   mounted() {
     this.retrieveProfile();

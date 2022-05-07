@@ -15,8 +15,10 @@
               <img v-bind:src="item.url_image" width="250" height="150"/>
               <v-card-title> {{ item.name }} </v-card-title>
               <v-divider></v-divider>
-              <v-card-title class="grey--text ms-4"> $ {{item.price}}</v-card-title>
-              <v-btn @click="navigateProductDetail(item.id)"></v-btn>
+              <v-row>
+                <v-card-title class="grey--text ms-4"> $ {{item.price}}</v-card-title>
+                <v-btn @click="navigateProductDetail(item.id)" class="pa-4">Ver más</v-btn>
+              </v-row>
             </v-card>
           </v-col>
         </v-row>

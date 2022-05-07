@@ -1,5 +1,6 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "email": "juan@gmail.com",
       "address": "Casa de Juan",
@@ -7,7 +8,8 @@
       "lastname": "Carlos",
       "phone": 111111111,
       "postal_code": 111
-    },{
+    },
+    {
       "id": 2,
       "email": "cesar@gmail.com",
       "address": "Casa de Cesar",
@@ -15,7 +17,8 @@
       "lastname": "Anibal",
       "phone": 222222222,
       "postal_code": 222
-    }, {
+    },
+    {
       "id": 3,
       "email": "beto@gmail.com",
       "address": "Casa de Beto",
@@ -23,131 +26,162 @@
       "lastname": "Salas",
       "phone": 333333333,
       "postal_code": 333
-    }],
-
-  "products": [{
-    "id": 1,
-    "name": "GeForce RTX 3090",
-    "price": 1200,
-    "description": "New Graphics Card",
-    "url_image": "https://www.profesionalreview.com/wp-content/uploads/2020/10/Nvidia-RTX-3090-Review10.jpg"
-  }, {
-    "id": 2,
-    "name": "GeForce RTX 3080",
-    "price": 1100,
-    "description": "New Graphics Card",
-    "url_image": "https://www.notebookcheck.org/fileadmin/Notebooks/NVIDIA/geforce_rtx_3080_fe.png"
-  }, {
-    "id": 3,
-    "name": "GeForce RTX 3070",
-    "price": 1000,
-    "description": "New Graphics Card",
-    "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3070/geforce-rtx-3070-shop-630-d@2x.png"
-  }, {
-    "id": 4,
-    "name": "GeForce RTX 3060",
-    "price": 900,
-    "description": "New Graphics Card",
-    "url_image": "https://i.blogs.es/15bae1/unnamed-2-/450_1000.jpeg"
-  }, {
-    "id": 5,
-    "name": "GeForce RTX 3050",
-    "price": 800,
-    "description": "New Graphics Card",
-    "url_image": "https://www.muycomputer.com/wp-content/uploads/2020/12/NVIDIA-GeForce-1.jpg"
-  }, {
-    "id": 6,
-    "name": "GeForce RTX 3090 Ti",
-    "price": 700,
-    "description": "New Graphics Card",
-    "url_image": "https://www.profesionalreview.com/wp-content/uploads/2020/10/Nvidia-RTX-3090-Review10.jpg"
-  }, {
-    "id": 7,
-    "name": "GeForce RTX 3080 Ti",
-    "price": 600,
-    "description": "New Graphics Card",
-    "url_image": "https://www.notebookcheck.org/fileadmin/Notebooks/NVIDIA/geforce_rtx_3080_fe.png"
-  }, {
-    "id": 8,
-    "name": "GeForce RTX 3070 Ti",
-    "price": 500,
-    "description": "New Graphics Card",
-    "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3070/geforce-rtx-3070-shop-630-d@2x.png"
-  }, {
-    "id": 9,
-    "name": "GeForce RTX 3060 TI",
-    "price": 400,
-    "description": "New Graphics Card",
-    "url_image": "https://i.blogs.es/15bae1/unnamed-2-/450_1000.jpeg"
-  }, {
-    "id": 10,
-    "name": "GeForce RTX 3050 Ti",
-    "price": 300,
-    "description": "New Graphics Card",
-    "url_image": "https://www.muycomputer.com/wp-content/uploads/2020/12/NVIDIA-GeForce-1.jpg"
-  }, {
-    "id": 11,
-    "name": "AMD Ryzen 7 5700",
-    "price": 200,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://www.muycomputer.com/wp-content/uploads/2021/04/Ryzen-7-5700G_2.jpg"
-  }, {
-    "id": 12,
-    "name": "AMD Ryzen 5 5600",
-    "price": 800,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://m.media-amazon.com/images/I/61YyzKD24dL._AC_SS450_.jpg"
-  }, {
-    "id": 13,
-    "name": "AMD Ryzen 9 5900",
-    "price": 700,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://www.amd.com/system/files/2019-11/238593-ryzen-9-pib-left-facing-1260x709_0.png"
-  }, {
-    "id": 14,
-    "name": "AMD Ryzen 7 5800",
-    "price": 600,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://i.ebayimg.com/images/g/5JUAAOSw8QRekZpt/s-l1600.jpg"
-  }, {
-    "id": 15,
-    "name": "AMD Ryzen 5 5600X",
-    "price": 500,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://m.media-amazon.com/images/I/61YyzKD24dL._AC_SS450_.jpg"
-  }, {
-    "id": 16,
-    "name": "AMD Ryzen 9 3950",
-    "price": 400,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://www.amd.com/system/files/2019-11/238593-ryzen-9-pib-left-facing-1260x709_0.png"
-  }, {
-    "id": 17,
-    "name": "AMD Ryzen 7 3800",
-    "price": 600,
-    "description": "Newest AMD Ryzen",
-    "url_image": "https://i.ebayimg.com/images/g/5JUAAOSw8QRekZpt/s-l1600.jpg"
-  }],
-
-  "categories": [{
-    "id": 1,
-    "name": "Tarjetas gráficas",
-    "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/overview/shop-2080-ti-300@2x.jpg"
-  },{
-    "id": 2,
-    "name": "Procesadores",
-    "url_image": "https://hardzone.es/app/uploads-hardzone.es/2019/12/Procesadores-Intel-y-AMD.jpg"
-  },{
-    "id": 3,
-    "name": "Motherboard",
-    "url_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXKyYaCOJEsoPHMj3L-HlGgTx1tRdpWwr3Xx4dNKm0ETWDsPIIgGrkAD2yQZauhHY6jWI&usqp=CAU"
-  },{
-    "id": 4,
-    "name": "Monitores",
-    "url_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbOwybJz0fe6QGxMvVH2GVPQopy_vAMDIq9g&usqp=CAU"
-  }
+    }
   ],
-
+  "products": [
+    {
+      "id": 1,
+      "name": "GeForce RTX 3090",
+      "price": "1500",
+      "description": "New Graphics Card",
+      "url_image": "https://www.profesionalreview.com/wp-content/uploads/2020/10/Nvidia-RTX-3090-Review10.jpg",
+      "category_id": 1,
+      "supplier_id": "1",
+      "vote_counter": "29",
+      "minimum_to_sold": "20"
+    },
+    {
+      "id": 2,
+      "name": "GeForce RTX 3080",
+      "price": 1100,
+      "description": "New Graphics Card",
+      "url_image": "https://www.notebookcheck.org/fileadmin/Notebooks/NVIDIA/geforce_rtx_3080_fe.png",
+      "vote_counter": "",
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "name": "GeForce RTX 3070",
+      "price": 1000,
+      "description": "New Graphics Card",
+      "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3070/geforce-rtx-3070-shop-630-d@2x.png",
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "name": "GeForce RTX 3060",
+      "price": 900,
+      "description": "New Graphics Card",
+      "url_image": "https://i.blogs.es/15bae1/unnamed-2-/450_1000.jpeg",
+      "category_id": 1
+    },
+    {
+      "id": 5,
+      "name": "GeForce RTX 3050",
+      "price": 800,
+      "description": "New Graphics Card",
+      "url_image": "https://www.muycomputer.com/wp-content/uploads/2020/12/NVIDIA-GeForce-1.jpg",
+      "category_id": 1
+    },
+    {
+      "id": 6,
+      "name": "GeForce RTX 3090 Ti",
+      "price": 700,
+      "description": "New Graphics Card",
+      "url_image": "https://www.profesionalreview.com/wp-content/uploads/2020/10/Nvidia-RTX-3090-Review10.jpg",
+      "category_id": "1"
+    },
+    {
+      "id": 7,
+      "name": "GeForce RTX 3080 Ti",
+      "price": 600,
+      "description": "New Graphics Card",
+      "url_image": "https://www.notebookcheck.org/fileadmin/Notebooks/NVIDIA/geforce_rtx_3080_fe.png",
+      "category_id": "1"
+    },
+    {
+      "id": 8,
+      "name": "GeForce RTX 3070 Ti",
+      "price": 500,
+      "description": "New Graphics Card",
+      "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3070/geforce-rtx-3070-shop-630-d@2x.png"
+    },
+    {
+      "id": 9,
+      "name": "GeForce RTX 3060 TI",
+      "price": 400,
+      "description": "New Graphics Card",
+      "url_image": "https://i.blogs.es/15bae1/unnamed-2-/450_1000.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "GeForce RTX 3050 Ti",
+      "price": 300,
+      "description": "New Graphics Card",
+      "url_image": "https://www.muycomputer.com/wp-content/uploads/2020/12/NVIDIA-GeForce-1.jpg"
+    },
+    {
+      "id": 11,
+      "name": "AMD Ryzen 7 5700",
+      "price": 200,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://www.muycomputer.com/wp-content/uploads/2021/04/Ryzen-7-5700G_2.jpg"
+    },
+    {
+      "id": 12,
+      "name": "AMD Ryzen 5 5600",
+      "price": 800,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://m.media-amazon.com/images/I/61YyzKD24dL._AC_SS450_.jpg"
+    },
+    {
+      "id": 13,
+      "name": "AMD Ryzen 9 5900",
+      "price": 700,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://www.amd.com/system/files/2019-11/238593-ryzen-9-pib-left-facing-1260x709_0.png"
+    },
+    {
+      "id": 14,
+      "name": "AMD Ryzen 7 5800",
+      "price": 600,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://i.ebayimg.com/images/g/5JUAAOSw8QRekZpt/s-l1600.jpg"
+    },
+    {
+      "id": 15,
+      "name": "AMD Ryzen 5 5600X",
+      "price": 500,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://m.media-amazon.com/images/I/61YyzKD24dL._AC_SS450_.jpg"
+    },
+    {
+      "id": 16,
+      "name": "AMD Ryzen 9 3950",
+      "price": 400,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://www.amd.com/system/files/2019-11/238593-ryzen-9-pib-left-facing-1260x709_0.png"
+    },
+    {
+      "id": 17,
+      "name": "AMD Ryzen 7 3800",
+      "price": 600,
+      "description": "Newest AMD Ryzen",
+      "url_image": "https://i.ebayimg.com/images/g/5JUAAOSw8QRekZpt/s-l1600.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Tarjetas gráficas",
+      "url_image": "https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/overview/shop-2080-ti-300@2x.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Procesadores",
+      "url_image": "https://hardzone.es/app/uploads-hardzone.es/2019/12/Procesadores-Intel-y-AMD.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Motherboard",
+      "url_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXKyYaCOJEsoPHMj3L-HlGgTx1tRdpWwr3Xx4dNKm0ETWDsPIIgGrkAD2yQZauhHY6jWI&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "name": "Monitores",
+      "url_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbOwybJz0fe6QGxMvVH2GVPQopy_vAMDIq9g&usqp=CAU"
+    }
+  ],
   "orders": [
     {
       "id": 1,
