@@ -67,7 +67,7 @@ export default {
       this.navigateToOrders();
     },
     navigateToOrders() {
-      this.$router.push({name: 'orders'});
+      this.$router.push({name: 'admin-orders'});
     }
   }
 }

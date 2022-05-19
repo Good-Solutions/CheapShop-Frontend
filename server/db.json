@@ -158,6 +158,39 @@
       "price": 600,
       "description": "Newest AMD Ryzen",
       "url_image": "https://i.ebayimg.com/images/g/5JUAAOSw8QRekZpt/s-l1600.jpg"
+    },
+    {
+      "id": 18,
+      "name": "123",
+      "price": 0,
+      "description": "",
+      "url_image": "",
+      "minimum_to_sold": 0,
+      "vote_counter": 0,
+      "category_id": 0,
+      "supplier_id": 0
+    },
+    {
+      "id": 19,
+      "name": "asdqwe",
+      "price": 0,
+      "description": "asd",
+      "url_image": "asd",
+      "minimum_to_sold": 0,
+      "vote_counter": 0,
+      "category_id": 0,
+      "supplier_id": 0
+    },
+    {
+      "id": 20,
+      "name": "Hola",
+      "price": 0,
+      "description": "asd",
+      "url_image": "asd",
+      "minimum_to_sold": 0,
+      "vote_counter": 0,
+      "category_id": 0,
+      "supplier_id": 0
     }
   ],
   "categories": [

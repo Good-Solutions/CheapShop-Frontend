@@ -84,8 +84,8 @@ export default {
         url_image:'',
         minimum_to_sold:0,
         vote_counter:0,
-        category_id:0,
-        supplier_id:0,
+        category_id:10,
+        supplier_id:10,
       },
     }
   },

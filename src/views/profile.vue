@@ -1,22 +1,25 @@
 <template>
   <v-layout align-center justify-center column fill-height>
     <v-flex row align-center class="pa-10">
-      <v-card max-width="500" max-height="300">
+      <v-card max-width="500">
         <v-container>
           <v-row align="center">
-            <v-col md="6">
+            <v-col md="7">
               <v-img
                   src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg"
                   width="250"
                   height="150"
-              ></v-img>
+              />
             </v-col>
-            <v-col md="6" align="center">
+            <v-col md="5">
               <v-row>
-                <v-card-text> {{ user.firstname }} {{user.lastname}}</v-card-text>
-                <v-card-text> Dirección: {{user.delivery_address}}</v-card-text>
-                <v-card-text> Número: {{user.phone_number}}</v-card-text>
-                <v-card-text> Dinero: {{user.money}}</v-card-text>
+                <v-card-title align="center"> {{user.firstname }} {{user.lastname}}</v-card-title>
+                <v-card-text>
+                  Postal Code: {{user.postalCode}} <br>
+                  Address: {{user.address}} <br>
+                  Phone: {{user.phoneNumber}} <br>
+                  Money: {{user.money}}
+                </v-card-text>
               </v-row>
             </v-col>
           </v-row>
@@ -35,13 +38,12 @@ export default {
     return{
       user: {
         id: 0,
-        delivery_address: 'delivery_address',
-        date_of_birth:'birth_date',
-        firstname:'firstname',
+        firstname: 'firstname',
         lastname:'lastname',
-        money:'money',
-        phone_number:'phone',
-        postal_code:'postal',
+        postalCode:'postalcode',
+        address:'address',
+        phoneNumber:'phone',
+        money: 999,
       }
     }
   },
@@ -50,15 +52,15 @@ export default {
     retrieveProfile(id) {
       UserApiService.get(id)
           .then((response) => {
-            this.product_item = response.data.content;
+            this.user = response.data;
           })
           .catch(e => {
             console.log((e));
           })
     },
   },
-  mounted() {
-    this.retrieveProfile();
+  created() {
+    this.retrieveProfile(this.$route.params.id);
   }
 }
 

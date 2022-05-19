@@ -3,25 +3,18 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-    {
-        path: '/profile',
-        name: 'profile',
-        component: () => import('../views/profile')
-    },
-
-    //Products
+    // ---------Products
     {
         path: '/products',
         name: 'products',
         component: () => import('../views/products')
     },
-    //View Detail
     {
         path: '/products/:id',
         name: 'product-detail',
         component: () => import('../views/product-detail')
     },
-    // Admin product
+    // Admin products
     {
         path: '/admin-products',
         name: 'admin-products',
@@ -38,7 +31,7 @@ const routes = [
         component: () => import('../components/products/edit-product')
     },
 
-    // admin orders
+    // ---------Orders
     {
         path: '/admin-orders',
         name: 'orders',
@@ -55,13 +48,13 @@ const routes = [
         component: () => import('../components/orders/edit-order')
     },
 
-    // categories
+    // ---------Categories
     {
         path: '/categories',
         name: 'categories',
         component: () => import('../views/categories')
     },
-    // admin categories
+    // Admin categories
     {
         path: '/admin-categories',
         name: 'admin-categories',
@@ -77,7 +70,14 @@ const routes = [
         name: 'edit-category',
         component: () => import('../components/categories/edit-category')
     },
-    // admin users
+
+    // ---------User
+    {
+        path: '/profile/:id',
+        name: 'profile',
+        component: () => import('../views/profile')
+    },
+    // Admin users
     {
         path: '/admin-users',
         name: 'admin-users',

@@ -23,10 +23,6 @@ class UsersApiService {
     deleteAll() {
         return http.delete(`/users`);
     }
-
-    findByName(name) {
-        return http.get(`/users?name=${name}`);
-    }
 }
 
 export default new UsersApiService();

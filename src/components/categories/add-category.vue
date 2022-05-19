@@ -55,7 +55,7 @@ export default {
       this.navigateToCategories();
     },
     navigateToCategories() {
-      this.$router.push({name: 'orders'});
+      this.$router.push({name: 'admin-categories'});
     }
   }
 }

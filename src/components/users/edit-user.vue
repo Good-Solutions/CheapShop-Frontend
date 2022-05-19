@@ -13,13 +13,13 @@
             <v-text-field v-model="item.lastname" label="Last Name"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.phone_number" label="Phone Number"></v-text-field>
+            <v-text-field v-model="item.postalCode" label="Postal Code"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.delivery_address" label="Delivery Address"></v-text-field>
+            <v-text-field v-model="item.address" label="Address"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
-            <v-text-field v-model="item.postal_code" label="Postal Code"></v-text-field>
+            <v-text-field v-model="item.phoneNumber" label="phoneNumber"></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" md="4">
             <v-text-field v-model="item.money" label="Money"></v-text-field>
@@ -44,13 +44,13 @@
       return {
         item: {
           id: 0,
-          delivery_address: "",
-          date_of_birth:"01/01/2000",
-          firstname:"",
-          lastname:"",
-          money:"",
-          phone_number:"",
-          postal_code:"",
+          firstname: '',
+          lastname:'',
+          postalCode:'',
+          dateOfBirth:'',
+          address:'',
+          phoneNumber:'',
+          money:'',
         }
       }
     },
@@ -77,7 +77,7 @@
         this.navigateToUsers();
         },
       navigateToUsers() {
-        this.$router.push({name: 'users'});
+        this.$router.push({name: 'admin-users'});
       }
       },
     created() {

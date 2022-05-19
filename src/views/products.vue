@@ -13,11 +13,16 @@
           >
             <v-card>
               <img v-bind:src="item.url_image" width="250" height="150"/>
-              <v-card-title> {{ item.name }} </v-card-title>
+              <h3> {{ item.name }} </h3>
               <v-divider></v-divider>
+
               <v-row>
-                <v-card-title class="grey--text ms-4"> $ {{item.price}}</v-card-title>
-                <v-btn @click="navigateProductDetail(item.id)" class="pa-4">Ver más</v-btn>
+                <v-col md="6">
+                  <h3 class="grey--text ms-4"> $ {{item.price}}</h3>
+                </v-col>
+                <v-col md="6">
+                  <v-btn @click="navigateProductDetail(item.id)" class="pa-4">Ver más</v-btn>
+                </v-col>
               </v-row>
             </v-card>
           </v-col>

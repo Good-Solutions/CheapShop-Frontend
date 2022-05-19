@@ -1,20 +1,36 @@
 <template>
   <v-layout align-center justify-center column >
     <v-flex row align-center class="pa-10">
-      <v-card>
+      <v-card width="1000">
         <v-container>
           <v-row align="center">
             <v-col md="6">
-              <img v-bind:src="product_item.url_image" width="400" height="300"/>
-              </v-col>
-            <v-col md="6" align="center">
+              <v-img
+                  v-bind:src="product_item.url_image"
+                  max-width="500"
+                  max-height="500"
+              />
+            </v-col>
+            <v-col md="6">
               <v-row>
-                <v-col md="12">{{product_item.name}}</v-col>
-                <v-col v-bind:key="getCategoryName(product_item)"></v-col>
-                <v-col>${{product_item.price}}</v-col>
-                <v-card-text>{{product_item.description}}</v-card-text>
-                <v-col>Votos : {{product_item.vote_counter}} / {{product_item.minimum_to_sold}}</v-col>
-                <v-col>
+                <v-col md="9">
+                  <h2>{{product_item.name}}</h2>
+                </v-col>
+                <v-col md="3">
+                  <h2>${{product_item.price}}</h2>
+                </v-col>
+              </v-row>
+              <br>
+              <div>
+                <h3>Categoria: {{getCategoryName(product_item)}}</h3>
+                <p>Descripcion: {{product_item.description}}</p>
+              </div>
+              <br>
+              <v-row>
+                <v-col md="8">
+                  <h3>Votos: {{product_item.vote_counter}} de {{product_item.minimum_to_sold}}</h3>
+                </v-col>
+                <v-col md="4">
                   <v-btn color="secondary" elevation="6"> Comprar </v-btn>
                 </v-col>
               </v-row>
@@ -37,13 +53,13 @@ export default {
       product_item: {
         id: 0,
         name: 'Generic Product',
-        price: 9999,
+        price: 0,
         description: 'Product Description',
         url_image:'https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/geforce-rtx-turing/overview/shop-2080-ti-300@2x.jpg',
-        minimum_to_sold:999,
-        vote_counter:99,
-        category_id:99,
-        supplier_id:99,
+        minimum_to_sold:0,
+        vote_counter:0,
+        category_id:0,
+        supplier_id:0,
       },
       category_item:{
         id: 0,
@@ -58,7 +74,7 @@ export default {
     retrieveProduct(id) {
       ProductsApiService.get(id)
           .then((response) => {
-            this.product_item = response.data.content;
+            this.product_item = response.data;
           })
           .catch(e => {
             console.log((e));
@@ -67,7 +83,7 @@ export default {
     getCategoryName(id) {
       CategoriesApiService.get(id)
           .then((response) => {
-            this.category_item = response.data.content;
+            this.category_item = response.data;
           })
           .catch(e => {
             console.log((e));

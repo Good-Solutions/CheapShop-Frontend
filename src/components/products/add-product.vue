@@ -76,7 +76,7 @@ export default {
       this.navigateToProducts();
     },
     navigateToProducts() {
-      this.$router.push({name: 'products'});
+      this.$router.push({name: 'admin-products'});
     }
   }
 }

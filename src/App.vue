@@ -34,7 +34,7 @@ export default {
       links:[
         {text: 'Products', route: '/products'},
         {text: 'Categories', route: '/categories'},
-        {text: 'Profile', route: '/profile'},
+        {text: 'Profile', route: '/profile/1'},
 
         {text: 'Admin-Products', route: '/admin-products'},
         {text: 'Admin-Categories', route: '/admin-categories'},
